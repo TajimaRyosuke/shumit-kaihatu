@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: "users/registrations"
   }
-  root to => 'homes#top'
+  root :to => 'homes#top'
 
   resources :users
   post 'follow/:id' => 'relationships#follow', as: 'follow' #フォローする
@@ -12,16 +12,14 @@ Rails.application.routes.draw do
   get '/users/:id/followers(.:format)' => 'users#followers', as: 'followers_user'
 
   resources :posts do
-    resource :favorites, only: [:create, :destroy]
-    resources :post_comments, only: [:create]
+    resource :favorites, only: [:create, :destroy] #いいね
+    resources :post_comments, only: [:create] #コメント投稿
   end
 
+  get 'search' => 'searches#search' #検索機能
 
-
-  get 'search' => 'searches#search'
-
-  get 'chat/id' => 'chats#show', as: 'chat'
-  resources :chats, only[:create]
+  get 'chat/id' => 'chats#show', as: 'chat' #DMチャット
+  resources :chats, only: [:create]
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
