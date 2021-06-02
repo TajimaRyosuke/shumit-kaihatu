@@ -1,32 +1,28 @@
 Rails.application.routes.draw do
-  get 'genres/index'
-  get 'genres/create'
-  get 'genres/edit'
-  get 'genres/update'
-  get 'genres/destroy'
-  get 'relationships/follow'
-  get 'relationships/unfollow'
-  get 'searches/search'
-  get 'favorites/create'
-  get 'favorites/destroy'
-  get 'chats/create'
-  get 'chats/show'
-  get 'comments/new'
-  get 'comments/create'
-  get 'comments/destroy'
-  get 'posts/index'
-  get 'posts/new'
-  get 'posts/create'
-  get 'posts/show'
-  get 'posts/edit'
-  get 'posts/update'
-  get 'posts/destroy'
-  get 'homes/top'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/following'
-  get 'users/followers'
-  devise_for :users
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
+  root to => 'homes#top'
+
+  resources :users
+  post 'follow/:id' => 'relationships#follow', as: 'follow' #フォローする
+  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' #フォローを外す
+  get '/users/:id/following(.:format)' => 'users#following', as: 'following_user'
+  get '/users/:id/followers(.:format)' => 'users#followers', as: 'followers_user'
+
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+    resources :post_comments, only: [:create]
+  end
+
+
+
+  get 'search' => 'searches#search'
+
+  get 'chat/id' => 'chats#show', as: 'chat'
+  resources :chats, only[:create]
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
