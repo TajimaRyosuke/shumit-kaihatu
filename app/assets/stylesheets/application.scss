@@ -14,3 +14,32 @@
  *= require_self
  */
 @import "bootstrap";
+
+
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #9B9B9B;
+    color: #FFFCFC;
+}
+
+
+// bodyとmainの記述でフッターを固定
+body{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1;
+}
+
+footer{
+    margin-top: auto;
+    width: 100%;
+    padding: 20px;
+    background-color:rgba(70, 70, 70, 0.9);
+    text-align: center;
+    color: #FFFCFC;
+}
