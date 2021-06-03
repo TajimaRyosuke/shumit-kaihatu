@@ -1,2 +1,19 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>新規投稿フォーム</h1>
+
+
+<%= form_with model: @post, local:true do |f| %>
+<label>Photo</label> <!--投稿画像-->
+<%= f.attachment_field :post_image %><br>
+
+<label>Title</label> <!--投稿タイトル-->
+<%= f.text_field :post_title, size:"30", class:"form-control" %>
+
+<label>Opinion</label> <!--投稿本文-->
+<%= f.text_area :opinion, size:"30x5", class:"form-control" %>
+
+<label>Genre</label> <!--ジャンル-->
+<%= f.collection_select :genre_id, Genre.all, :id, :genre, prompt: "---ジャンルを選択してください---", size: "30", class: "form-control" %>
+
+<%= f.submit 'Post', class:"btn btn" %>
+
+<% end %>

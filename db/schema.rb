@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_081855) do
+ActiveRecord::Schema.define(version: 2021_06_03_122202) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2021_06_02_081855) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.integer "post_id"
     t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
