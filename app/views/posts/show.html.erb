@@ -5,7 +5,11 @@
 <%= attachment_image_tag @post, :post_image, :fill, 60, 60, fallback: "no_image.jpg" %><br>
 <%= @post.post_title %>
 <%= @post.opinion %>
-<%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
 
+<td id ="likes_buttons_<%= @post.id %>">
+  <%= render "favorites/like", post: @post %>
+</td>
+
+<%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
 
 <%= link_to "編集", edit_post_path, class:"btn btn-sm btn-outline-success" %>

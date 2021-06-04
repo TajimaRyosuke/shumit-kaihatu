@@ -14,23 +14,27 @@ class User < ApplicationRecord
   has_many :follower, class_name: "Relationship", foreign_key:"follower_id", dependent: :destroy
   has_many :followed, class_name: "Relationship", foreign_key:"followed_id", dependent: :destroy
 
-  has_many :following_user, through: :follower, source: :followed
-  has_many :follower_user, though: :followed, source: :follower
 
-  def follow(user_id)
-    follower.create(followed_id: user_i)
-  end
 
-  def unfollow(user_id)
-    follower.find_by(followed_id: user_id).destroy
-  end
+#ここからダメ
+  # has_many :following_user, through: :follower, source: :followed
+  # has_many :follower_user, though: :followed, source: :follower
 
-  def following?(user)
-    following_user.include?(user)
-  end
+  # def follow(user_id)
+  #   follower.create(followed_id: user_id)
+  # end
 
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-  has_many :followers, though: :passive_relationships, source: :follower
+  # def unfollow(user_id)
+  #   follower.find_by(followed_id: user_id).destroy
+  # end
+
+  # def following?(user)
+  #   following_user.include?(user)
+  # end
+
+  # has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  # has_many :followers, though: :passive_relationships, source: :follower
+#ここまでダメ
 
   has_many :user_rooms
   has_many :chats
