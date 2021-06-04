@@ -13,3 +13,7 @@
 <%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
 
 <%= link_to "編集", edit_post_path, class:"btn btn-sm btn-outline-success" %>
+
+<div id ="post_comments">
+  <%= render "post_comments/comment", post: @post, post_comment: @post.post_comments %>
+</div>

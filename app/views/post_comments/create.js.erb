@@ -1,0 +1,4 @@
+$(window).on('turbolinks:load', function(){
+$('#post_comments').html('<%= j(render "post_comments/comment", post: @post) %>')
+});
+$(postcomment_comment).val('')
