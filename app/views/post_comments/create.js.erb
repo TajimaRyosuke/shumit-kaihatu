@@ -1,4 +1,2 @@
-$('#post_comments').html('<%= j(render partial: {"post_comments/comment", locals: {post: @post}) %>');
-$(postcomment_comment_comment).val('')
-
-$('#likes_buttons_<%= @post.id %>').html('<%= j(render partial: "favorites/like", locals: {post: @post}) %>');
+$('#post_comments').html("<%= j(render partial: "post_comments/comment", locals: {post: @post, post_comment: @post.post_comments}) %>");
+$(postcomment_comment_comment).val('');
