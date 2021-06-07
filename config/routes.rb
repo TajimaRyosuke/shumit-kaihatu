@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
   root :to => 'homes#top'
 
-  resources :users
-  post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
-  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォローを外す
-  get '/users/:id/following(.:format)' => 'users#following', as: 'following_user'
-  get '/users/:id/followers(.:format)' => 'users#followers', as: 'followers_user'
+  resources :users do
+   resource :relationships, only: [:create, :destroy]
+   get :follows, on: :member #追加
+   get :followers, on: :member #追加
+ end
 
   resources :posts do
     resource :favorites, only: [:create, :destroy] # いいね
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'search' => 'searches#search' # 検索機能
 
   get 'chat/id' => 'chats#show', as: 'chat' # DMチャット
-  resources :chats, only: [:create]
+  resources :chats, only: [:create, :show]
   resources :genres, only: [:index, :create, :edit, :update,:destroy ]
 
 
