@@ -6,14 +6,14 @@
 <%= @post.post_title %>
 <%= @post.opinion %>
 
-<td id ="likes_buttons_<%= @post.id %>">
+<div id ="likes_buttons_<%= @post.id %>">
   <%= render partial: "favorites/like", locals: { post: @post} %>
-</td>
+</div>
 
 <%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
 
 <%= link_to "編集", edit_post_path, class:"btn btn-sm btn-outline-success" %>
 
 <div id ="post_comments">
-  <%= render "post_comments/comment", post: @post, post_comment: @post.post_comments %>
+  <%= render partial: "post_comments/comment", locals: { post: @post, post_comment: @post.post_comments} %>
 </div>

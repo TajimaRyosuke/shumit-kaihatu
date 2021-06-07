@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   devise_for :users
   root :to => 'homes#top'
 
@@ -16,9 +17,15 @@ Rails.application.routes.draw do
 
   get 'search' => 'searches#search' # 検索機能
 
-  get 'chat/id' => 'chats#show', as: 'chat' # DMチャット
+  get 'chat/:id' => 'chats#show', as: 'chat' # DMチャット
   resources :chats, only: [:create, :show]
-  resources :genres, only: [:index, :create, :edit, :update,:destroy ]
+
+
+  namespace :admin do
+      root to: 'homes#top'
+      resources :genres, only: [:index, :create, :edit, :update,:destroy ]
+      resources :posts, only: [:index, :show, :destroy ]
+  end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
