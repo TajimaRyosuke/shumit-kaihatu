@@ -1,5 +1,4 @@
 <h1>投稿一覧兼ログイン後のトップページ</h1>
-<%= link_to "ジャンル追加", genres_path %><br>
 
 <% @posts.each do |post| %>
   <%= link_to post_path(post) do %>

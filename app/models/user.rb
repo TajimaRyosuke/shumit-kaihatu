@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
 # 自分がフォローされるユーザーとの関係
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
-  has_many :followers, through: :passive_relationships, source: :following
+  has_many :followers, through: :passive_relationships, source: :followed
 
   def followed_by?(user)
     passive_relationships.find_by(followed_id: user.id).present?
