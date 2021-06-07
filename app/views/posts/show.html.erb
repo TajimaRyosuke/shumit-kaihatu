@@ -7,7 +7,7 @@
 <%= @post.opinion %>
 
 <td id ="likes_buttons_<%= @post.id %>">
-  <%= render "favorites/like", post: @post %>
+  <%= render partial: "favorites/like", locals: { post: @post} %>
 </td>
 
 <%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
