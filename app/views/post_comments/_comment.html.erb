@@ -8,7 +8,7 @@
     <% end %>
 </div>
 <div>
-    <%= form_with model: [@post, PostComment.new] do |f| %>
+    <%= form_with model: [post, PostComment.new] do |f| %>
        <%= f.text_area :comment, size:"15x5", class:"form-control" %><br>
        <%= f.submit "コメントを送信" %>
     <% end %><br>
