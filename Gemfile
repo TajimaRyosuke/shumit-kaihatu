@@ -74,7 +74,7 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'rubocop-airbnb'
 
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:production]
 group:production do
   gem 'mysql2'
 end
