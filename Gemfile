@@ -75,6 +75,6 @@ gem 'jquery-rails'
 gem 'rubocop-airbnb'
 
 gem 'dotenv-rails'
-group :production do
+group:production do
   gem 'mysql2'
 end
