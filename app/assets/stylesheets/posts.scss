@@ -1,3 +1,93 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-visual{
+  position: absolute;
+  width: 100%;
+  height: 216px;
+  left: 0px;
+  top: 52px;
+  background-image: url(post.index.top.jpg);
+  background-size:100%;
+  background-position: center;
+}
+
+.topic{
+  position: absolute;
+  width: 607px;
+  height: 56px;
+  left: 80px;
+  top: 10px;
+
+  color:#FFFCFC;
+}
+.search{
+  position: absolute;
+  width: 712px;
+  height: 40px;
+  left: 354px;
+  top: 287px;
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.post-index{
+  position: absolute;
+  width: 712px;
+  height: 350px;
+  left: 354px;
+  top: 350px;
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+}
+
+.post_image{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+}
+
+.genre-index{
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  left: 50px;
+  top: 350px;
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.ranking-index{
+  position: absolute;
+  width: 270px;
+  height: 350px;
+  right: 50px;
+  top: 350px;
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.message-index{
+  position: absolute;
+  width: 270px;
+  height: 40px;
+  right: 50px;
+  top: 287px;
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.group-index{
+  position: absolute;
+  width: 250px;
+  height: 40px;
+  left: 50px;
+  top: 287px;
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}

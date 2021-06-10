@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'chat/:id' => 'chats#show', as: 'chat' # DMチャット
   resources :chats, only: [:create, :show]
-
+  resources :genres, only: [:index, :create, :edit, :update,:destroy ]
 
   namespace :admin do
       root to: 'homes#top'

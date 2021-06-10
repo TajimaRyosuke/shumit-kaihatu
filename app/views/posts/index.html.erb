@@ -1,7 +1,39 @@
-<h1>投稿一覧兼ログイン後のトップページ</h1>
+<div class="main-visual">
+  <h1 class="topic">WEEKLY PICK UP ! !</h1>
+</div>
 
-<% @posts.each do |post| %>
-  <%= link_to post_path(post) do %>
-   <%= attachment_image_tag(post, :post_image, size:"200x200") %>
-  <% end %>
-<% end %>
+<div class="search">
+  <label>検索機能</label>
+</div>
+
+<div class="post-index">
+ <% @posts.each do |post| %>
+  <table>
+    <tr>
+      <td>
+       <%= link_to post_path(post) do%>
+        <%= attachment_image_tag(post, :post_image, size:"200x200")%>
+       <% end %>
+      </td>
+    </tr>
+   </table>
+ <% end %>
+
+</div>
+
+<div class="genre-index">
+  <label>ジャンル選択機能</label>
+</div>
+
+<div class="ranking-index">
+  <label>ランキング機能</label>
+</div>
+
+<div class="message-index">
+  <label>メッセージ機能</label>
+</div>
+
+<div class="group-index">
+  <label>グループ一覧機能</label>
+</div>
+

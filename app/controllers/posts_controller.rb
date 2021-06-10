@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
       redirect_to post_path(@post), notice: "投稿が成功しました。"
     else
@@ -47,6 +48,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:post_image, :post_title, :opinion )
+    params.require(:post).permit(:post_image, :post_title, :opinion, :genre_id )
   end
 end

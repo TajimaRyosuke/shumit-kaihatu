@@ -1,19 +1,46 @@
-<h1>新規投稿フォーム</h1>
-
+<div class="container m-4">
+<br><br>
+<div class="row">
+  <div class="col-md4">
+    <h3>さぁ！！あなたの活動を広めましょう！！</h3>
+  </div>
+</div><br><br><br><br>
 
 <%= form_with model: @post, local:true do |f| %>
-<label>Photo</label> <!--投稿画像-->
-<%= f.attachment_field :post_image %><br>
+<div class="row">
+  <div class="col-md-4 my-2 text-right ">
+  <label>Photo</label> <!--投稿画像-->
+  </div>
+  <div class="col-md-8 ">
+  <%= f.attachment_field :post_image %>
+  </div><br>
 
-<label>Title</label> <!--投稿タイトル-->
-<%= f.text_field :post_title, size:"30", class:"form-control" %>
+  <div class="col-md-4 my-2 text-right">
+  <label>Title</label> <!--投稿タイトル-->
+  </div>
+  <div class="col-md-8">
+  <%= f.text_field :post_title, size:"30", class:"form-control"%>
+  </div><br>
 
-<label>Opinion</label> <!--投稿本文-->
-<%= f.text_area :opinion, size:"30x5", class:"form-control" %>
+  <div class="col-md-4 my-auto text-right">
+  <label>Opinion</label> <!--投稿本文-->
+  </div>
+  <div class="col-md-8">
+  <%= f.text_area :opinion, size:"30x5", class:"form-control" %>
+  </div>
 
-<label>Genre</label> <!--ジャンル-->
-<%= f.collection_select :genre_id, Genre.all, :id, :genre, prompt: "---ジャンルを選択してください---", size: "30", class: "form-control" %>
-
-<%= f.submit 'Post', class:"btn btn" %>
-
+  <div class="col-md-4 my-2 text-right">
+  <label>Genre</label> <!--ジャンル-->
+  </div>
+  <div class="col-md-8 my-2">
+  <%= f.collection_select :genre_id, Genre.all, :id, :genre, prompt: "---ジャンルを選択してください---", size: "30", class: "form-control" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 offset-md-4 mt-3">
+    <%= f.submit 'Post', class:"btn btn-sm btn-outline-primary" %>
+  </div>
+</div>
 <% end %>
+
+</div>
