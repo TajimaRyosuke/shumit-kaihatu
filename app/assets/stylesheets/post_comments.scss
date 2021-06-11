@@ -30,12 +30,18 @@
   color: #FFFCFC;
 }
 
+.comment-submit:hover{
+  background-color:#FFFCFC;
+  border: 1px solid #007bff;
+  color: #007bff;
+}
+
 #post_comments{
   padding:15px;
 
   position: absolute;
   width: 200px;
-  height: 500px;
+  height: 545px;
   left: 40px;
   top: 195px;
 

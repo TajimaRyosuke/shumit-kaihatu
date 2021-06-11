@@ -1,7 +1,21 @@
-<div class="post-user-show">
+<%= link_to user_path(@post.user_id) do %>
+<div class="post-user-img-show">
   <%= attachment_image_tag(@post.user, :profile_image, size:"90x90", fallback: "no_image.png")%>
 </div>
+<div class="post-user-name">
+  <%= @post.user.name %>
+</div>
+<% end %>
 
+<div class="relationship-show">
+  <% if current_user != @post.user %>
+    <% if @post.user.followed_by?(current_user) %>
+      <span><%= link_to "Unfollow", user_relationships_path(@post.user.id), method: :delete, class:"btn btn-outline-success" %></span>
+    <% else %>
+      <span><%= link_to "Follow", user_relationships_path(@post.user.id), method: :post , class:"btn btn-outline-primary" %></span>
+    <% end %>
+  <% end %>
+</div>
 
 <div  class="post_image-show">
   <%= attachment_image_tag(@post, :post_image, size:"350x350") %>

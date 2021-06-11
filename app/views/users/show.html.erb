@@ -2,7 +2,7 @@
 
 <div>
   <label>アイコン画像</label>
-  <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.png" %>
+  <%= attachment_image_tag(@user, :profile_image, size:"150x150", fallback: "no_image.png") %>
 </div>
 
 <div>

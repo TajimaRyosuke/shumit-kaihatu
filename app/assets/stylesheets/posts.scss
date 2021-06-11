@@ -151,7 +151,7 @@
   position: absolute;
   width: 90px;
   height: 42px;
-  left: 350px;
+  left: 425px;
   top: 553px;
 }
 
@@ -159,10 +159,10 @@
   position: absolute;
   width: 90px;
   height: 42px;
-  left: 550px;
+  left: 475px;
   top: 553px;
 }
-.post-user-show{
+.post-user-img-show{
   position: absolute;
   width: 90px;
   height: 90px;
@@ -172,4 +172,27 @@
 
 .profile_image{
   border: 1px solid #A69696;
+}
+.post-user-name{
+  position: absolute;
+  width: 0px;
+  height: 28px;
+  left: 400px;
+  top: 109px;
+
+  font-family: Roboto;
+  font-size: 30px;
+  line-height: 28px;
+
+  color: #343a40;
+  text-decoration: none;
+}
+
+.relationship-show{
+  position: absolute;
+  width: 200px;
+  height: 42px;
+  right: 120px;
+  top: 109px;
+
 }
