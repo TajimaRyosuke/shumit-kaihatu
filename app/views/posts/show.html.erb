@@ -1,3 +1,8 @@
+<div class="post-user-show">
+  <%= attachment_image_tag(@post.user, :profile_image, size:"90x90", fallback: "no_image.png")%>
+</div>
+
+
 <div  class="post_image-show">
   <%= attachment_image_tag(@post, :post_image, size:"350x350") %>
 </div>
@@ -27,8 +32,6 @@
   <%= link_to "編集", edit_post_path, class:"btn btn-sm btn-outline-success" %>
 </div>
 
-<div class="">
 <div id ="post_comments">
   <%= render partial: "post_comments/comment", locals: { post: @post, post_comment: @post.post_comments} %>
-</div>
 </div>
