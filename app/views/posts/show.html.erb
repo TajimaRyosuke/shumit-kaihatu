@@ -1,19 +1,34 @@
+<div  class="post_image-show">
+  <%= attachment_image_tag(@post, :post_image, size:"350x350") %>
+</div>
 
-<label>投稿詳細画面</label><br>
+<div class="post-title-opinion">
+  <div class="post-title-show">
+    <%= @post.post_title %>
+  </div>
 
+  <div class="line-show"></div>
 
-<%= attachment_image_tag @post, :post_image, fallback: "no_image.jpg" %><br>
-<%= @post.post_title %>
-<%= @post.opinion %>
+  <div class="post-opinion-show">
+    <%= @post.opinion %>
+  </div>
+</div>
+
 
 <div id ="likes_buttons_<%= @post.id %>">
   <%= render partial: "favorites/like", locals: { post: @post} %>
 </div>
 
-<%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
+<div class="delete-show">
+  <%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
+</div>
 
-<%= link_to "編集", edit_post_path, class:"btn btn-sm btn-outline-success" %>
+<div class="edit-show">
+  <%= link_to "編集", edit_post_path, class:"btn btn-sm btn-outline-success" %>
+</div>
 
+<div class="">
 <div id ="post_comments">
   <%= render partial: "post_comments/comment", locals: { post: @post, post_comment: @post.post_comments} %>
+</div>
 </div>
