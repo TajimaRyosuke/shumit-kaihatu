@@ -1,37 +1,29 @@
-<div>
-  <label>ユーザー画面</label><br>
-</div>
-
-<div>
-  <label>アイコン</label>
+<div class="user-profile_image-show"> <!--アイコン画像-->
   <%= attachment_image_tag(@user, :profile_image, size:"150x150", fallback: "no_image.png") %>
 </div>
 
-<div>
-  <label>ユーザー</label>
+<div class="user-name-show"> <!--ユーザーネーム-->
   <%= @user.name %>
 </div>
 
-<div>
+<div class="user-introduction-show"> <!--ユーザー自己紹介文-->
+  <%= @user.introduction %>
+</div>
+
+<div class="relationship-show">
   <% if current_user != @user %>
     <% if @user.followed_by?(current_user) %>
-      <span><%= link_to "Unfollow", user_relationships_path(@user.id), method: :delete %></span>
+      <span><%= link_to "Unfollow", user_relationships_path(@user.id), method: :delete, class:"btn btn-outline-success"  %></span>
     <% else %>
-      <span><%= link_to "Follow", user_relationships_path(@user.id), method: :post %></span>
+      <span><%= link_to "Follow", user_relationships_path(@user.id), method: :post, class:"btn btn-outline-primary" %></span>
     <% end %>
+  <% else %>
+    <%= link_to "編集", edit_user_path, class:"btn btn-outline-success" %>
   <% end %>
 </div>
 
 <div>
-  <label>紹介文</label>
-  <%= @user.introduction %>
-</div>
-
-<div>
-  <%= link_to "編集", edit_user_path, class:"btn btn-sm btn-outline-success" %>
-</div>
-<div>
   <% if current_user != @user %>
-  <%= link_to "チャットを開始する", chat_path(@user.id)%>
+  <%= link_to "チャットを開始する", chat_path(@user.id), class:"chat-show"%>
   <% end %>
 </div>

@@ -42,10 +42,16 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
 }
+
 //attachment_image_tagに自動的に割り振られたclass(検証で確認可)
 .post_image{
   border: 1px solid #A69696;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+}
+
+.post_image-index:hover{
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
   border-radius: 24px;
 }
 
@@ -172,6 +178,7 @@
 
 .profile_image{
   border: 1px solid #A69696;
+  border-radius: 80px;
 }
 .post-user-name{
   position: absolute;
@@ -194,5 +201,4 @@
   height: 42px;
   right: 120px;
   top: 109px;
-
 }

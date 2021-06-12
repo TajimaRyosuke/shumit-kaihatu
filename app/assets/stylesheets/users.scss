@@ -1,3 +1,70 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-profile_image-show{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 300px;
+  top: 78px;
+}
+
+.user-name-show{
+  position: absolute;
+  width: 0px;
+  height: 28px;
+  left: 470px;
+  top: 109px;
+
+  font-family: Roboto;
+  font-size: 30px;
+  line-height: 28px;
+
+  color: #343a40;
+  text-decoration: none;
+}
+
+.user-introduction-show{
+  position: absolute;
+  width: 700px;
+  height: 28px;
+  left: 470px;
+  top: 150px;
+
+  font-family: Roboto;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.relationship-show{
+  position: absolute;
+  width: 200px;
+  height: 42px;
+  right: 120px;
+  top: 115px;
+}
+
+.edit-user-show{
+  position: absolute;
+  width: 200px;
+  height: 42px;
+  right: 120px;
+  top: 109px;
+}
+
+.chat-show{
+  position: absolute;
+  height: 28px;
+  left: 470px;
+  top: 200px;
+
+  color: #343a40;
+  text-decoration: none;
+}
+
+.chat-show:hover{
+  position: absolute;
+  height: 28px;
+  left: 470px;
+  top: 200px;
+
+  color: #fd7e14;
+  text-decoration: none;
+}
