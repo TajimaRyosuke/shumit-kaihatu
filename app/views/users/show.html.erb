@@ -1,7 +1,9 @@
-<label>ユーザー画面</label><br>
+<div>
+  <label>ユーザー画面</label><br>
+</div>
 
 <div>
-  <label>アイコン画像</label>
+  <label>アイコン</label>
   <%= attachment_image_tag(@user, :profile_image, size:"150x150", fallback: "no_image.png") %>
 </div>
 
