@@ -1,7 +1,7 @@
 <div class="container m-4">
 <br><br>
 <div class="row">
-  <div class="col-md4">
+  <div class="col-md-12 text-center">
     <h3>さぁ！！あなたの活動を広めましょう！！</h3>
   </div>
 </div><br><br><br><br>
@@ -19,14 +19,14 @@
   <label>Title</label> <!--投稿タイトル-->
   </div>
   <div class="col-md-8">
-  <%= f.text_field :post_title, size:"30", class:"form-control"%>
+  <%= f.text_field :post_title, size:"30", class:"form-control", placeholder:"タイトルは１３文字までです！"%>
   </div><br>
 
   <div class="col-md-4 my-auto text-right">
   <label>Opinion</label> <!--投稿本文-->
   </div>
   <div class="col-md-8">
-  <%= f.text_area :opinion, size:"30x5", class:"form-control" %>
+  <%= f.text_area :opinion, size:"30x5", class:"form-control", placeholder:"メッセージは１０２文字までです！" %>
   </div>
 
   <div class="col-md-4 my-2 text-right">

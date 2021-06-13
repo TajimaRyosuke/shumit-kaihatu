@@ -26,4 +26,7 @@ class User < ApplicationRecord
   has_many :user_rooms
   has_many :chats
 
+  def self.looks(word)
+    @user = User.where("name LIKE?","%#{word}%")
+  end
 end
