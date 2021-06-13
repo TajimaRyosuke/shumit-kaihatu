@@ -26,7 +26,7 @@
   width: 700px;
   height: 28px;
   left: 470px;
-  top: 150px;
+  top: 170px;
 
   font-family: Roboto;
   font-size: 24px;
@@ -66,5 +66,33 @@
   top: 200px;
 
   color: #fd7e14;
+  text-decoration: none;
+}
+
+.follow{
+  position: absolute;
+  width: 0px;
+  height: 42px;
+  right: 425px;
+  top: 109px;
+
+  color: #6c757d;
+  text-decoration: none;
+}
+
+
+.follower{
+  position: absolute;
+  width: 0px;
+  height: 42px;
+  right: 550px;
+  top: 109px;
+
+  color: #6c757d;
+  text-decoration: none;
+}
+
+p{
+  color: #6c757d;
   text-decoration: none;
 }

@@ -1,0 +1,39 @@
+<table class="table table-hover table-inverse">
+  <!--検索対象モデルがUserの時 -->
+  <% if @range == "User" %>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to user_path(user) do %>
+              <%= attachment_image_tag(user, :profile_image, size:"150x150")%>
+            <% end %>
+          </td>
+          <td>
+            <%=link_to user_path(user) do %>
+              <%= user.name %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+    <!--検索対象モデルがPostの時 -->
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td>
+            <%=link_to post_path(post) do %>
+              <%= attachment_image_tag(post, :post_image, size:"150x150")%>
+            <% end %>
+          </td>
+          <td>
+            <%=link_to post_path(post) do %>
+              <%= post.post_title %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>

@@ -12,24 +12,35 @@
 
 <div class="relationship-show">
   <% if current_user != @user %>
-    <% if @user.followed_by?(current_user) %>
+    <% if @user.followed_by?(current_user) %><!--フォロー機能-->
       <span><%= link_to "Unfollow", user_relationships_path(@user.id), method: :delete, class:"btn btn-outline-success"  %></span>
     <% else %>
       <span><%= link_to "Follow", user_relationships_path(@user.id), method: :post, class:"btn btn-outline-primary" %></span>
     <% end %>
   <% else %>
-    <%= link_to "編集", edit_user_path, class:"btn btn-outline-success" %>
+    <%= link_to "編集", edit_user_path, class:"btn btn-outline-success" %><!--編集機能-->
   <% end %>
 </div>
 
-<div>
+<div class="follow" ><!--フォローリスト-->
+  <%= link_to follows_user_path(@user) do %>
+    <p><%= @user.followings.count %> Follow</p>
+  <% end %>
+</div>
+
+<div class="follower"><!--フォロワーリスト-->
+  <%= link_to followers_user_path(@user) do %>
+    <p><%= @user.followers.count %> Follower</p>
+  <% end %>
+</div>
+
+<div><!--チャット機能-->
   <% if current_user != @user %>
   <%= link_to "チャットを開始する", chat_path(@user.id), class:"chat-show"%>
   <% end %>
 </div>
 
 <!--userの投稿一覧-->
-
 <div class="user-post-show">
   <table>
    <% @posts.each do |post| %>
