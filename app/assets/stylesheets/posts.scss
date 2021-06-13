@@ -34,26 +34,23 @@
   width: 712px;
   height: 350px;
   left: 354px;
-  top: 350px;
+  top: 334px;
 
-  border: 1px solid #000000;
   box-sizing: border-box;
 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
   border-radius: 24px;
 }
 
 //attachment_image_tagに自動的に割り振られたclass(検証で確認可)
 .post_image{
-  border: 1px solid #A69696;
+  border: 2px solid #f8f9fa;
   // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+  margin: 20px 0 20px 20px;
 }
 
-.post_image-index:hover{
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
-  border-radius: 24px;
-}
 
 .genre-index{
   position: absolute;
@@ -103,8 +100,8 @@
   position: absolute;
   width: 350px;
   height: 350px;
-  left: 300px;
-  top: 195px;
+  left: 284px;
+  top: 175px;
 }
 
 .post-title-opinion{
@@ -150,7 +147,6 @@
 
   font-family: Roboto;
   font-size: 25px;
-  line-height: 21px;
 }
 
 .delete-show{
@@ -201,4 +197,17 @@
   height: 42px;
   right: 120px;
   top: 109px;
+}
+
+.user-post-show{
+  position: absolute;
+  width: 712px;
+  height: 350px;
+  left: 450px;
+  top: 200px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
+  border-radius: 24px;
 }

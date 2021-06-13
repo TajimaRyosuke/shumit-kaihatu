@@ -7,18 +7,15 @@
 </div>
 
 <div class="post-index">
- <% @posts.each do |post| %>
   <table>
+ <% @posts.each do |post| %>
     <tr class="post_image-index">
-      <td>
-       <%= link_to post_path(post) do%>
-        <%= attachment_image_tag(post, :post_image, size:"200x200")%>
+       <%= link_to post_path(post) do %>
+        <%= attachment_image_tag(post, :post_image, size:"150x150")%>
        <% end %>
-      </td>
     </tr>
-   </table>
  <% end %>
-
+　</table>
 </div>
 
 <div class="genre-index">

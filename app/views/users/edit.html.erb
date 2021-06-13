@@ -1,27 +1,33 @@
 <div class="row">
   <div class="col-md-12 my-2 text-center"><br /><br /><br />
-    <label>ユーザー情報編集</label>
+    <h3>ユーザー情報編集</h3>
   </div>
-</div>
+</div></br>
 
 <%= form_with model: @user, local:true do |f| %>
 <div class="row">
-  <div class="col-md-12 my-2 text-center ">
-    <div>
-      <label>アイコン画像</label><br />
-      <%= f.attachment_field :profile_image %><br><br><br>
+    <div class="col-md-4 my-2 text-right">
+      <label>アイコン画像</label>
     </div>
-  </div>
-  <div class="col-md-12 my-2 text-center ">
-    <div>
-      <label>ユーザー名</label><br />
-      <%= f.text_field :name %><br><br>
+    <div class="col-md-8" >
+      <%= f.attachment_field :profile_image %>
+    </div><br>
+
+    <div class="col-md-4 my-2 text-right">
+      <label>ユーザー名</label>
     </div>
-  </div>
-  <div class="col-md-4 my-2 text-center ">
-    <div>
-      <label>紹介文</label><br />
-      <%= f.text_area :introduction, size:"30x5", class:"justify-content-center form-control " %>
+    <div class="col-md-8">
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="col-md-4 my-auto text-right">
+      <label>紹介文</label>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_area :introduction, size:"30x5", class:"form-control" %>
+    </div>
+    <div class="col-md-4">
+      <%= %>
     </div>
   </div>
 </div><br /><br /><br />

@@ -38,6 +38,7 @@
   <%= render partial: "favorites/like", locals: { post: @post} %>
 </div>
 
+<% if current_user == @post.user %><!--投稿をしたuserのみ見れる-->
 <div class="delete-show">
   <%= link_to "削除", post_path(@post), method: :delete, class:"btn btn-sm btn-outline-danger" %>
 </div>
@@ -45,6 +46,7 @@
 <div class="edit-show">
   <%= link_to "編集", edit_post_path, class:"btn btn-sm btn-outline-success" %>
 </div>
+<% end %>
 
 <div id ="post_comments">
   <%= render partial: "post_comments/comment", locals: { post: @post, post_comment: @post.post_comments} %>

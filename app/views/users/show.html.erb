@@ -27,3 +27,22 @@
   <%= link_to "チャットを開始する", chat_path(@user.id), class:"chat-show"%>
   <% end %>
 </div>
+
+<!--userの投稿一覧-->
+
+<div class="user-post-show">
+  <table>
+   <% @posts.each do |post| %>
+    <tr class="post_image-index">
+      <th>
+       <%= link_to post_path(post) do %>
+        <%= attachment_image_tag(post, :post_image, size:"200x200")%>
+       <% end %>
+       </th>
+       <th>
+         <%= post.post_title%>
+       </th>
+    </tr>
+   <% end %>
+　</table>
+</div>
