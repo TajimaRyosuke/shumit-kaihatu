@@ -5,6 +5,8 @@ class PostsController < ApplicationController
     # ジャンル別一覧表示
     @genre = Genre.find(params[:id]) if params[:id]
     @genres = Genre.all
+
+    @post_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
   end
 
   def new
