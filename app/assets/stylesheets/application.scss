@@ -23,22 +23,22 @@ header{
     color: #FFFCFC;
 }
 
-
-// bodyとmainの記述でフッターを固定
 body{
-    display: flex;
-    flex-flow: column;
-    min-height: 100vh;
+     height: 800px;
+      /* フッタと同じ高さに設定 */
+     margin-bottom: 60px;
+     box-sizing: border-box;
+      /* 一番下までスクロールした時の余白 */
+     padding-bottom: 80px;
 }
 
-// // main{
-// //     flex: 1;
-// // }
-
 footer{
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 0;
     width: 100%;
-    padding: 20px;
+
+    padding: 10px;
     background-color:rgba(70, 70, 70, 0.9);
     text-align: center;
     color: #FFFCFC;

@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
     # 全権一覧表示
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     # ジャンル別一覧表示
     @genre = Genre.find(params[:id]) if params[:id]
-    @genres = Genre.all
+    @genres = Genre.all.order(created_at: :desc)
 
     @post_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(5).pluck(:post_id))
   end

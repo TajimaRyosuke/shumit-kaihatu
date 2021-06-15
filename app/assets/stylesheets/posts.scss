@@ -25,8 +25,8 @@
   left: 354px;
   top: 287px;
 
-  border: 1px solid #000000;
-  box-sizing: border-box;
+  // border: 1px solid #000000;
+  // box-sizing: border-box;
   text-align:center;
 }
 
@@ -46,17 +46,17 @@
 
 .select-button{
   color:#fd7e14;
-  // position:absolute;
-  // width:50px;
-  // height:20px;
 }
 
 .post-index{
   position: absolute;
-  width: 712px;
+  width: 750px;
   height: 350px;
-  left: 354px;
+  left: 340px;
   top: 334px;
+
+  display: flex;
+  flex-wrap: wrap;
 
   box-sizing: border-box;
 
@@ -70,7 +70,7 @@
   // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 24px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
-  margin: 15px 15px 15px 15px;
+  margin: 15px 15px 15px 0px;
 }
 
 
@@ -92,10 +92,10 @@
   width: 270px;
   height: 350px;
   right: 50px;
-  top: 350px;
+  top: 287px;
 
-  border: 1px solid #000000;
-  box-sizing: border-box;
+  // border: 1px solid #000000;
+  // box-sizing: border-box;
 }
 
 .message-index{
@@ -223,15 +223,12 @@
   top: 109px;
 }
 
-.user-post-show{
-  position: absolute;
-  width: 712px;
-  height: 350px;
-  left: 450px;
-  top: 200px;
 
-  box-sizing: border-box;
+.ranking{
+  text-decoration: none!important;
+  color:#343a40;
+}
 
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
-  border-radius: 24px;
+.post-link-index{
+  text-decoration: none!important;
 }
