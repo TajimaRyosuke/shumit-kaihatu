@@ -1,8 +1,33 @@
 class UsersController < ApplicationController
   def show
+    # ユーザー情報
     @user = User.find(params[:id])
+    # ユーザー投稿内容
     @posts = @user.posts.all.order(created_at: :desc)
+
+    # チャット
+    @currentUserEntry=Entry.where(user_id: current_user.id)
+    @userEntry=Entry.where(user_id: @user.id)
+    if @user.id == current_user.id
+      @msg ="他のユーザーとDMしてみよう！"
+    else
+      @currentUserEntry.each do |cu|
+        @userEntry.each do |u|
+          if cu.room_id == u.room_id then
+            @isRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+
+      if @isRoom != true
+        @room = Room.new
+        @entry = Entry.new
+      end
+
+    end
   end
+
 
   def edit
     @user = User.find(params[:id])

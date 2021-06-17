@@ -13,4 +13,6 @@ class Post < ApplicationRecord
     def self.looks(word)
         @post = Post.where("post_title LIKE?","%#{word}%")
     end
+
+    has_many :notifications, dependent: :destroy
 end

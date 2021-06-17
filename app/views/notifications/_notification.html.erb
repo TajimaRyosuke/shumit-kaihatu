@@ -1,0 +1,10 @@
+<% visitor = notification.visitor_id %>
+<% visited = notification.visited_id %>
+<div>
+ <%= link_to user_path(visitor) do %>
+   <% if notification.action=='dm' %>
+      あなたにチャットが届いています！早速確認してみましょう！！
+   <% end %>
+ <% end %>
+ <%= notification.created_at.to_s(:datetime_jp) %>
+</div>

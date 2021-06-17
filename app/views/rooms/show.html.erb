@@ -1,0 +1,15 @@
+<div>
+    <% @messages.each do |message| %>
+        <%= message.body %>
+        <p><%= message.user.name %>さん</p>
+    <% end %>
+
+    <%= form_with model: Message.new, url:chats_path, local:true do |f| %>
+    <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , :size => 100 %>
+    <%= f.hidden_field :room_id, :value => @room.id %>
+    <br>
+    <%= f.submit "送信する" %>
+    <% end %>
+</div>
+
+<%= link_to "ホームへ戻る", posts_path %>

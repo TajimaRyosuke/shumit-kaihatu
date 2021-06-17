@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rooms/show'
+  get 'notifications/index'
   devise_for :admins
   devise_for :users
   root :to => 'homes#top'
@@ -17,8 +19,9 @@ Rails.application.routes.draw do
 
   get 'search' => 'searches#search' # 検索機能
 
-  get 'chat/:id' => 'chats#show', as: 'chat' # DMチャット
-  resources :chats, only: [:create, :show]
+  resources :chats, only: [:create] # チャット機能
+  resources :rooms, only: [:create, :show]
+
   resources :genres, only: [:index, :create, :edit, :update,:destroy ]
 
   namespace :admin do

@@ -34,10 +34,22 @@
   <% end %>
 </div>
 
-<div><!--チャット機能-->
-  <% if current_user != @user %>
-  <%= link_to "チャットを開始する", chat_path(@user.id), class:"chat-show"%>
-  <% end %>
+<!--チャット機能-->
+<div>
+<% if @user.id == current_user.id %>
+    <%= @msg %>
+<% else %>
+    <% if @isRoom == true %>
+        <p><%= link_to 'DMへ', room_path(@roomId) %></p>
+    <% else %>
+        <%= form_for @room do |f| %>
+            <%= fields_for @entry do |e|%>
+                <% e.hidden_field :user_id, value: @user.id %>
+            <% end %>
+        <%= f.submit "DMを開始する"%>
+        <% end %>
+    <% end %>
+<% end %>
 </div>
 
 <!--userの投稿一覧-->

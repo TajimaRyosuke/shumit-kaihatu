@@ -23,10 +23,15 @@ class User < ApplicationRecord
     passive_relationships.find_by(followed_id: user.id).present?
   end
 
-  has_many :user_rooms
-  has_many :chats
+  has_many :chats, dependent: :destroy
+  has_many :entries, dependent: :destroy
 
   def self.looks(word)
     @user = User.where("name LIKE?","%#{word}%")
   end
+
+# 通知がくるようにするための設定
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+
 end
