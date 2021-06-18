@@ -1,15 +1,26 @@
-<div>
+<div class="chat-form">
+  <div>
     <% @messages.each do |message| %>
-        <%= message.body %>
-        <p><%= message.user.name %>さん</p>
-    <% end %>
+      <% if message.user_id == current_user.id %>
+        <div class="current_user" >
+           <strong class="current_user" ><%= message.body %></strong><br>
+           <small class="current_user"><%= message.user.name %>さん</small>
+        </div>
+      <% else %>
+        <div class="visited_user" >
+           <strong class="visited_user" ><%= message.body %></strong><br>
+           <small class="visited_user"><%= message.user.name %>さん</small>
+        </div>
+      <% end %>
+    <% end %><br>
+  </div>
 
+  <div>
+    <!--送信フォーム-->
     <%= form_with model: Message.new, url:chats_path, local:true do |f| %>
-    <%= f.text_field :body, :placeholder => "メッセージを入力して下さい" , :size => 100 %>
+    <%= f.text_field :body, :placeholder => "　チャットでメッセージを送りましょう" , :size => 73 %>
     <%= f.hidden_field :room_id, :value => @room.id %>
-    <br>
-    <%= f.submit "送信する" %>
-    <% end %>
+    <%= f.submit "Send Chat!!" ,class:"chat-button" %>
+    <% end %><br>
+  </div>
 </div>
-
-<%= link_to "ホームへ戻る", posts_path %>

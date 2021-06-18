@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'rooms/show'
-  get 'notifications/index'
   devise_for :admins
   devise_for :users
   root :to => 'homes#top'
@@ -24,12 +22,13 @@ Rails.application.routes.draw do
 
   resources :genres, only: [:index, :create, :edit, :update,:destroy ]
 
+  resources :notifications, only: [:index, :update]
+
   namespace :admin do
       root to: 'homes#top'
       resources :genres, only: [:index, :create, :edit, :update,:destroy ]
       resources :posts, only: [:index, :show, :destroy ]
   end
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
