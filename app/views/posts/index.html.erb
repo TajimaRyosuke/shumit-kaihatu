@@ -14,6 +14,7 @@
           <%= attachment_image_tag(post, :post_image, size:"150x150")%>
         <% end %>
       <% end %>
+      <span class="page-btn"><%= paginate @genre %></span>
   <% else %>
     <!--トップページの一覧画面-->
       <% @posts.each do |post| %>
@@ -21,13 +22,14 @@
        　 <%= attachment_image_tag(post, :post_image, size:"150x150")%>
         <% end %>
       <% end %>
+      <span class="page-btn"><%= paginate @posts %></span>
 　<% end %>
 </div>
 
 <div class="genre-index"><!--ジャンルを選択-->
   <label>ジャンルを選択できます！</label><br>
   <%= link_to "新着順", posts_path, class:"btn" %><br>
-  <% @genres.each do |genre| %>
+  <% @genres_index.each do |genre| %>
     <%= link_to genre.genre, posts_path(id: genre), class:"btn" %><br>
   <% end %>
 </div>
