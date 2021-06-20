@@ -108,9 +108,13 @@
 .ranking-index{
   position: absolute;
   width: 270px;
-  height: 350px;
+  height: 450px;
   right: 50px;
   top: 287px;
+  overflow: scroll;
+
+  // border: 0.5px solid #6c757d;
+  // border-radius: 24px;
 }
 
 .message-index{
@@ -257,6 +261,8 @@
 
 .post-link-index{
   text-decoration: none!important;
+  overflow: scroll;
+
 }
 
 .page-btn{

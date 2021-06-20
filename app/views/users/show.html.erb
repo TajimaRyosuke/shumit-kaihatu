@@ -35,18 +35,18 @@
 </div>
 
 <!--チャット機能-->
-<div>
+<div class="chat-user-show">
 <% if @user.id == current_user.id %>
     <%= @msg %>
 <% else %>
     <% if @isRoom == true %>
-        <p><%= link_to 'チャットルーム', room_path(@roomId) %></p>
+        <p><%= link_to 'CHAT ROOM', room_path(@roomId), class:"chat-user-font" %></p>
     <% else %>
         <%= form_for @room do |f| %>
             <%= fields_for @entry do |e|%>
                 <% e.hidden_field :user_id, value: @user.id %>
             <% end %>
-        <%= f.submit "チャットを開始する"%>
+        <%= f.submit "チャットを開始する", class:"chat-user-font" %>
         <% end %>
     <% end %>
 <% end %>
