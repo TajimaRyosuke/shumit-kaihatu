@@ -44,3 +44,24 @@ footer{
     color: #FFFCFC;
 
 }
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #6c757d;   /*文字の色を変える*/
+}
+
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #20c997;
+    border-color: #007bff;
+}
+
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
+  text-decoration: none!important;
+}

@@ -5,23 +5,12 @@
   border-radius: 50px;
 }
 
-#post_comment_comment{
-  position: absolute;
-  width: 900px;
-  height: 140px;
-  left: 260px;
-  top: 400px;
-
-  border: 1px solid #A69696;
-  border-radius: 24px;
-}
-
 .comment-submit{
   position: absolute;
   width: 177px;
   height: 42px;
   left: 970px;
-  top: 490px;
+  top: 690px;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 30px;
@@ -36,14 +25,26 @@
   color: #007bff;
 }
 
-#post_comments{
+.post_comments_index{
   padding:15px;
 
   position: absolute;
   width: 200px;
-  height: fit-content;
+  height: 550px;
   left: 40px;
   top: 195px;
+  overflow: scroll;
+
+  border: 1px solid #A69696;
+  border-radius: 24px;
+}
+
+#post_comment_comment{
+  position: absolute;
+  width: 930px;
+  height: 140px;
+  left: 280px;
+  top: 600px;
 
   border: 1px solid #A69696;
   border-radius: 24px;
