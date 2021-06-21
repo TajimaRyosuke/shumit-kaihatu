@@ -35,10 +35,11 @@
 </div>
 
 <!--チャット機能-->
-<div class="chat-user-show">
+<div>
 <% if @user.id == current_user.id %>
     <%= @msg %>
 <% else %>
+  <div class="chat-user-show">
     <% if @isRoom == true %>
         <p><%= link_to 'CHAT ROOM', room_path(@roomId), class:"chat-user-font" %></p>
     <% else %>
@@ -49,6 +50,7 @@
         <%= f.submit "チャットを開始する", class:"chat-user-font" %>
         <% end %>
     <% end %>
+  </div>
 <% end %>
 </div>
 
