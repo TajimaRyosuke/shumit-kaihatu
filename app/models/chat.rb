@@ -1,10 +1,10 @@
 class Chat < ApplicationRecord
-    belongs_to :user
-    belongs_to :room
+  belongs_to :user
+  belongs_to :room
 
-    has_many :notifications, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
-    def create_notification_chat!(current_user, chat_id)
+  def create_notification_chat!(current_user, chat_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
     temp_ids = Chat.select(:user_id).where(chat_id: id).where.not(user_id: current_user.id).distinct
     temp_ids.each do |temp_id|
@@ -12,7 +12,7 @@ class Chat < ApplicationRecord
     end
     # まだ誰もコメントしていない場合は、投稿者に通知を送る
     save_notification_chat!(current_user, chat_id, user_id) if temp_ids.blank?
-    end
+  end
 
   def save_notification_chat!(current_user, chat_id, visited_id)
     # コメントは複数回することが考えられるため、１つの投稿に複数回通知する
