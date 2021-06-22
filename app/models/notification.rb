@@ -1,5 +1,5 @@
 class Notification < ApplicationRecord
-# 新着順に並べるための記述
+  # 新着順に並べるための記述
   default_scope -> { order(created_at: :desc) }
   belongs_to :room, optional: true
   belongs_to :message, optional: true
@@ -9,5 +9,4 @@ class Notification < ApplicationRecord
 
   belongs_to :post, optional: true
   belongs_to :post_comment, optional: true
-
 end

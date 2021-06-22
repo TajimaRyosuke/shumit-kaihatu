@@ -6,28 +6,27 @@ class UsersController < ApplicationController
     @posts = @user.posts.all.order(created_at: :desc)
 
     # チャット
-    @currentUserEntry=Entry.where(user_id: current_user.id)
-    @userEntry=Entry.where(user_id: @user.id)
+    @current_user_entry = Entry.where(user_id: current_user.id)
+    @user_entry = Entry.where(user_id: @user.id)
     if @user.id == current_user.id
-      @msg =""
+      @msg = ""
     else
-      @currentUserEntry.each do |cu|
-        @userEntry.each do |u|
-          if cu.room_id == u.room_id then
-            @isRoom = true
-            @roomId = cu.room_id
+      @current_user_entry.each do |cu|
+        @user_entry.each do |u|
+          if cu.room_id == u.room_id
+            @is_room = true
+            @room_id = cu.room_id
           end
         end
       end
 
-      if @isRoom != true
+      if @is_room != true
         @room = Room.new
         @entry = Entry.new
       end
 
     end
   end
-
 
   def edit
     @user = User.find(params[:id])
@@ -43,16 +42,17 @@ class UsersController < ApplicationController
   end
 
   def follows
-      user = User.find(params[:id])
-      @users = user.followings
+    user = User.find(params[:id])
+    @users = user.followings
   end
 
   def followers
-      user = User.find(params[:id])
-      @users = user.followers
+    user = User.find(params[:id])
+    @users = user.followers
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
@@ -60,5 +60,4 @@ class UsersController < ApplicationController
   def post_params
     params.require(:post).permit(:post_title, :post_image, :opinion)
   end
-
 end

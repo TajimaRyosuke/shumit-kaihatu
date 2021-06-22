@@ -40,8 +40,8 @@
     <%= @msg %>
 <% else %>
   <div class="chat-user-show">
-    <% if @isRoom == true %>
-        <p><%= link_to 'CHAT ROOM', room_path(@roomId), class:"chat-user-font" %></p>
+    <% if @is_room == true %>
+        <p><%= link_to 'CHAT ROOM', room_path(@room_id), class:"chat-user-font" %></p>
     <% else %>
         <%= form_for @room do |f| %>
             <%= fields_for @entry do |e|%>
