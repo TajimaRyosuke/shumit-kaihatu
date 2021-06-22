@@ -14,7 +14,7 @@
           <%= attachment_image_tag(post, :post_image, size:"150x150")%>
         <% end %>
       <% end %>
-      <span class="page-btn"><%= paginate @genre %></span>
+      <span class="page-btn"><%= paginate @genres %></span>
   <% else %>
     <!--トップページの一覧画面-->
       <% @posts.each do |post| %>
