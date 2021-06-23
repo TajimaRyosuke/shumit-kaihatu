@@ -35,7 +35,7 @@
 </div>
 
 <div class="ranking-index">
-  <span>急上昇ランキング！！</span><br>
+  <span>いいね取得数ランキング</span><br>
   <% @post_ranks.each do |post| %>
     <%= link_to post_path(post), class: "ranking" do %>
       <%= attachment_image_tag(post, :post_image, size:"70x70") %>
