@@ -15,4 +15,8 @@ class Post < ApplicationRecord
   end
 
   has_many :notifications, dependent: :destroy
+
+  # バリデーションの設定
+  validates :post_title, length:{minimum:1, maximum:10}
+  validates :opinion, length:{minimum:1, maximum:102}
 end
