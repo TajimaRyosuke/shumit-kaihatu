@@ -35,7 +35,7 @@ class User < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   # バリデーションの設定
-  validates :name, presence: true, uniqueness:true, length:{minimum:2, maximum:20}
-  validates :introduction, length:{maximum:50}
+  validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 20 }
+  validates :introduction, length: { maximum: 50 }
 
 end
