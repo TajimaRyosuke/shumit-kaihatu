@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :correct_user, only: [:edit]
+
   def show
     # ユーザー情報
     @user = User.find(params[:id])
@@ -49,6 +51,13 @@ class UsersController < ApplicationController
   def followers
     user = User.find(params[:id])
     @users = user.followers
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    unless @user.id == current_user.id
+      redirect_to posts_path
+    end
   end
 
   private

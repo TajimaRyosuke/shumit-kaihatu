@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :correct_user, only: [:edit]
+
   def index
     # 全権一覧表示
     @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc)
@@ -45,6 +47,13 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     redirect_to posts_path, notice: "投稿の削除が完了しました。"
+  end
+
+  def correct_user
+    @post = Post.find(params[:id])
+    unless @post.user.id == current_user.id
+      redirect_to posts_path
+    end
   end
 
   private
