@@ -1,3 +1,73 @@
-<h1>Admin::Posts#index</h1>
-<p>Find me in app/views/admin/posts/index.html.erb</p>
+
 <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class:'btn btn-ms btn-outline-danger'%>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+<div>
+  <!--Postの一覧画面-->
+  <table>
+    <thead>
+      <tr>
+        <th>画像</th>
+        <th>タイトル</th>
+        <th>本文</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr>
+        <td><%= attachment_image_tag(post, :post_image, size:"30x30")%></td>
+        <td><%= post.post_title %></td>
+        <td><%= post.opinion %></td>
+        <td>削除</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <!--Genreの一覧画面-->
+  <table>
+    <thead>
+      <tr>
+        <th>ジャンル</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @genres.each do |genre| %>
+      <tr>
+        <td><%= genre.genre %></td>
+        <td>削除</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <!--Userの一覧画面-->
+  <table>
+    <thead>
+      <tr>
+        <th>アイコン</th>
+        <th>ユーザーネーム</th>
+        <th>紹介文</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= attachment_image_tag(user, :profile_image, size:"30x30")%></td>
+        <td><%= user.name %></td>
+        <td><%= user.introduction %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+  </div>
+</div>
