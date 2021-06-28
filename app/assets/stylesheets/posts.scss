@@ -25,8 +25,6 @@
   left: 354px;
   top: 287px;
 
-  // border: 1px solid #000000;
-  // box-sizing: border-box;
   text-align:center;
 }
 
@@ -59,7 +57,7 @@
 }
 
 #word{
-  border: 1.5px solid #6c757d;
+  border: 1.5px solid #9B9B9B;
   border-radius: 24px;
 }
 
@@ -67,7 +65,7 @@
 .post-index{
   position: absolute;
   width: 750px;
-  height: 350px;
+  height: 420px;
   left: 340px;
   top: 334px;
 
@@ -77,30 +75,37 @@
   box-sizing: border-box;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0);
+  border: 0.5px solid #9B9B9B;
+  box-sizing: border-box;
   border-radius: 24px;
 }
 
 //attachment_image_tagに自動的に割り振られたclass(検証で確認可)
 .post_image{
   border: 2px solid #f8f9fa;
-  // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid #9B9B9B;
   border-radius: 24px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
+
   margin: 15px 15px 15px 0px;
+}
+
+.post_image:hover{
+  box-shadow: 0px 4px 4px rgba(1, 1, 1, 1);
 }
 
 
 .genre-index{
   position: absolute;
   width: 250px;
-  height: 400px;
+  height: 420px;
   left: 50px;
-  top: 350px;
+  top: 334px;
   overflow: scroll;
 
   text-align:center;
 
-  border: 0.5px solid #6c757d;
+  border: 0.5px solid #9B9B9B;
   box-sizing: border-box;
   border-radius: 24px;
 }
@@ -131,12 +136,13 @@
 .group-index{
   position: absolute;
   width: 250px;
-  height: 40px;
+  height: 30px;
   left: 50px;
   top: 287px;
 
-  border: 1px solid #000000;
+  border: 1px solid #9B9B9B;
   box-sizing: border-box;
+  border-radius: 24px;
 
   text-align:center;
 }
