@@ -7,7 +7,7 @@ class Admin::GenresController < ApplicationController
   def create
     @genre = Genre.new(genre_params)
     if @genre.save
-      redirect_to genres_path
+      redirect_to admin_genres_path
     else
       @genres = Genre.all
       render :index
@@ -30,7 +30,7 @@ class Admin::GenresController < ApplicationController
   def destroy
     genre = Genre.find(params[:id])
     genre.destroy
-    redirect_to genres_path
+    redirect_to admin_genres_path
   end
 
   private
