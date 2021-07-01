@@ -27,7 +27,7 @@
 </div>
 
 <div class="genre-index"><!--ジャンルを選択-->
-  <label>ジャンルを選択できます</label><br>
+  <label>ジャンルで絞る</label><br>
   <%= link_to "新着順", posts_path, class:"btn" %><br>
   <% @genres_index.each do |genre| %>
     <%= link_to genre.genre, posts_path(id: genre), class:"btn" %><br>
