@@ -18,7 +18,7 @@
   <div>
     <!--送信フォーム-->
     <%= form_with model: Message.new, url:chats_path, local:true do |f| %>
-    <%= f.text_field :body, :placeholder => "　チャットでメッセージを送りましょう" , :size => 73 %>
+    <%= f.text_field :body, :placeholder => "　チャットにメッセージを送りましょう" , :size => 73 %>
     <%= f.hidden_field :room_id, :value => @room.id %>
     <%= f.submit "Send Chat!!" ,class:"chat-button" %>
     <% end %><br>
