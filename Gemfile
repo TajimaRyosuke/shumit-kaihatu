@@ -68,6 +68,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用
 gem "refile-mini_magick"
+# 画像をS3にアップロード
+gem "refile-s3"
 # ユーザー認証機能
 gem 'devise'
 # ページ機能
@@ -77,7 +79,7 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'rubocop-airbnb'
 
-gem 'dotenv-rails', groups: [:production]
+gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
