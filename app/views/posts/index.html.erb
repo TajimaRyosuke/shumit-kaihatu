@@ -35,7 +35,7 @@
 </div>
 
 <div class="ranking-index">
-  <span class="far fa-thumbs-up">いいね取得数ランキング</span><br>
+  <span class="far fa-thumbs-up">いいねランキング</span><br>
   <% @post_ranks.each do |post| %>
     <%= link_to post_path(post), class: "ranking" do %>
       <%= attachment_image_tag(post, :post_image, size:"70x70") %>
