@@ -11,7 +11,7 @@
     <!--ジャンル選択時の一覧画面-->
       <% @genre.posts.each do |post| %>
         <%= link_to post_path(post), class:"post-link-index" do %>
-          <%= attachment_image_tag(post, :post_image, size:"150x150")%>
+          <%= attachment_image_tag(post, :post_image, :fill, 150,150, size:"150x150")%>
         <% end %>
       <% end %>
       <span class="page-btn"><%= paginate @genres %></span>
@@ -19,7 +19,7 @@
     <!--トップページの一覧画面-->
       <% @posts.each do |post| %>
         <%= link_to post_path(post), class:"post-link-index" do %>
-       　 <%= attachment_image_tag(post, :post_image, size:"150x150")%>
+       　 <%= attachment_image_tag(post, :post_image, :fill,150,150, size:"150x150")%>
         <% end %>
       <% end %>
       <span class="page-btn"><%= paginate @posts %></span>
