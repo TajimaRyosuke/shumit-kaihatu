@@ -18,7 +18,7 @@ describe "ログイン後のトップページの確認" do
   end
 
   context '表示の確認' do
-    it 'posts_pathが"/posts_path"であるか' do
+    it 'posts_pathが"/posts"であるか' do
       expect(current_path).to eq('/posts')
     end
   end
@@ -33,5 +33,16 @@ describe "投稿画面(new_post_path)のテスト" do
     it 'new_post_pathが"/posts/new"であるか' do
       expect(current_path).to eq('/posts/new')
     end
+  end
+
+  describe "投稿詳細画面のテスト" do
+    before do
+      visit post_path(post)
+    end
+  context '投稿画像のかくにん' do
+    it 'post_titleが表示されているか' do
+      expect(page).to have_content post.post_title
+    end
+  end
   end
 end
