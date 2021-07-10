@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     # 全権一覧表示
-    @posts = Post.reverse_order.order(created_at: :desc)
+    @posts = Post.page(params[:page]).reverse_order.order(created_at: :desc)
     # ジャンル別一覧表示
     @genre = Genre.find(params[:id]) if params[:id]
     @genres = Genre.page(params[:page]).reverse_order.order(created_at: :desc)
