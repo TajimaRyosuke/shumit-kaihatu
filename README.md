@@ -1,5 +1,6 @@
 # Shum!t
-
+>## URL
+http://shumit.net/
 >## 1. サイト概要
 フルライフを目指す一環として趣味を共有したり趣味のない人が趣味を見つけることができるようにするためのコミュニティサイト開発。
 趣味の活動を投稿できる。コメント機能やチャット機能でユーザー同士の交流ができる。
@@ -20,6 +21,8 @@
 1. 趣味を見つけたい時
 
 >## 6. 設計書
+- インフラ構成図![image](https://user-images.githubusercontent.com/80523946/125765915-6432aa45-f704-4b07-9ade-8c245854e045.png)
+
 - [要件定義書](https://docs.google.com/document/d/1rA84kX-Q3cZoraL2VpeyeylwLQo_yDJTmmYUs-vmDEI/edit?usp=sharing)  
 - [UI Flow](https://drive.google.com/file/d/1wy6lnmqN9tlWsEKXjgifKauOYzqZm3rQ/view?usp=sharing)  
 - [ER図](https://drive.google.com/file/d/1MkigWDfElkzksud1PK9tNzqTNHRwrenW/view?usp=sharing)
