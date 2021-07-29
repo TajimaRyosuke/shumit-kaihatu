@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :gen do
+  factory :genre do
     genre {'test'}
   end
 end

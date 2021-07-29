@@ -1,4 +1,8 @@
 require 'rails_helper'
+describe 'ユーザーログイン後のテスト' do
+  let(:user) { create(:user) }
+  let(:genre) { create(:genre) }
+
 
 describe "トップ画面(root_path)のテスト" do
   before do
@@ -36,25 +40,19 @@ describe "投稿画面(new_post_path)のテスト" do
 end
 
 describe "投稿詳細画面のテスト" do
+
+  let(:post) { create(:post, user_id: user.id , genre_id: genre.id) }
+
   before do
 
-    @user = FactoryBot.build(:user2)
-    @user.save
-
     visit new_user_session_path
-    fill_in 'user[name]', with: @user.name
-    fill_in 'user[email]', with: @user.email
-    fill_in 'user[password]', with: '123456'
-    # byebug
+    fill_in 'user[name]', with: user.name
+    fill_in 'user[email]', with: user.email
+    fill_in 'user[password]', with: 'password'
+
+
     click_button 'Log in'
 
-    @post = FactoryBot.build(:post)
-    @post.user_id = FactoryBot.create(:user).id
-    @post.genre_id = Genre.create(genre: 'test').id
-    @post.save
-
-    puts @post.inspect
-    # puts '-----------'
     # @post2 = FactoryBot.create(:post)
     # puts @post2.inspect
 
@@ -65,13 +63,13 @@ describe "投稿詳細画面のテスト" do
     # @genre = Genre.create(genre: 'test')
     # puts @genre.inspect
 
-    visit post_path(@post)
+    visit post_path(post)
   end
   context '投稿画像のかくにん' do
     it 'post_titleが表示されているか' do
-      # expect(page).to have_content post.post_title
-      # expect(page).to have_content post.opinion
-      # expect(page).to have_content post.post_image_id
+      expect(page).to have_content post.post_title
+      expect(page).to have_content post.opinion
+      expect(page).to have_content post.post_image
     end
   end
   context 'リンクの確認' do
@@ -97,4 +95,5 @@ describe "投稿編集画面のテスト" do
       # expect(page).to have_button '変更内容を保存'
     end
   end
+end
 end
