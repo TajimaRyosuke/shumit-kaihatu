@@ -75,11 +75,10 @@ describe "投稿詳細画面のテスト" do
   end
   context 'リンクの確認' do
     it '編集ボタンがある' do
-      edit_link = find_all('a')[0]
-	    expect(edit_link.native.inner_text).to match(/edit/i)
+      edit_link = find("div.edit-show > a")
+	    expect(edit_link.native.inner_text).to match('編集')
     end
     it '編集ボタンの遷移先が編集画面' do
-      # edit_link = find_all('a')[0]
       click_link '編集'
 	    expect(current_path).to eq('/posts/' + post.id.to_s + '/edit')
     end
