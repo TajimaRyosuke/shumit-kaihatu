@@ -54,8 +54,8 @@ describe "投稿詳細画面のテスト" do
 
   before do
 
-    # @post2 = FactoryBot.create(:post)
-    # puts @post2.inspect
+    # @post = FactoryBot.create(:post)
+    # puts @post.inspect
 
     # @user = FactoryBot.create(:user)
     # puts @user.inspect
@@ -77,6 +77,11 @@ describe "投稿詳細画面のテスト" do
     it '編集ボタンがある' do
       edit_link = find_all('a')[0]
 	    expect(edit_link.native.inner_text).to match(/edit/i)
+    end
+    it '編集ボタンの遷移先が編集画面' do
+      # edit_link = find_all('a')[0]
+      click_link '編集'
+	    expect(current_path).to eq('/posts/' + post.id.to_s + '/edit')
     end
   end
 end
